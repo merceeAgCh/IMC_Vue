@@ -18,14 +18,19 @@ const app = Vue.createApp({
             <input type="number"> <br> <br>
             <button @click="calcularIMC">Calcular</button> {{ imc }}
         </div>
-    ` /* ,
+        <h3>Para calcular tu Grasa Corporal, proporciona los siguientes datos.</h3>
+        <div>
+            <p>Selecciona tu sexo y posteriormente ingresa tu edad.</p>
+            <input type="radio" v-model="value" :value="femenino" /> {{value}}
+            <input type="radio" v-model="value" :value="masc" /> {{value}}
+        </div>
+    ` ,
     data(){
         return {
-            imc,
-            gc
+            value: 'femenino'
         }
     } 
-    ,
+    /*,
     methods:{
          calcularIMC(peso, estatura){
             imc = peso / (estatura * estatura);
